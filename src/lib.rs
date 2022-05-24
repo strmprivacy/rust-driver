@@ -16,7 +16,7 @@
 //! ## Example usage
 //! Using and initializing the STRMPrivacy client to send event data to our api.
 //! ```
-//!     use strm_privacy_driver::{StrmPrivacyClient, StrmPrivacyValue, StrmStatusCode};
+//!     use strm_privacy_driver::{StrmPrivacyClient, StrmStatusCode};
 //! #   use dotenv::dotenv;
 //!     use std::env;
 //!     use strm_privacy_driver::test::demo::{DemoEvent, StrmMeta};
@@ -24,8 +24,7 @@
 //!
 //!     #[tokio::main]
 //!     async fn main() -> Result<(), Error> {
-//! #         dotenv().ok();
-//! #        pretty_env_logger::init();
+//! #       dotenv().ok();
 //!
 //!         // initialize the env variables
 //!         let billing_id = env::var("BILLING_ID").expect("no BILLING_ID found in environment");

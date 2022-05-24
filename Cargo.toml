@@ -1,8 +1,9 @@
 [package]
 name = "strm-privacy-driver"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Maciek Mika maciek@strmprivacy.io"]
 description = "Rust API driver for STRMPrivacy"
+repository = "https://github.com/strmprivacy/rust-driver"
 license = "Apache-2.0"
 edition = "2021"
 
@@ -10,10 +11,10 @@ edition = "2021"
 
 [dependencies]
 reqwest = { version = "0.11", features = ["json"] }
-dotenv = "0.15.0"
 tokio = { version = "1", features = ["full"] }
-tokio-test = "0.4.2"
-pretty_env_logger = "0.4"
-log = "0.4.17"
 serde = { version = "1.0.136", features = ["derive"] }
-avro-rs = {version = "0.13.0"}
+avro-rs = { version = "0.13.0" }
+
+[dev-dependencies]
+dotenv = "0.15.0"
+tokio-test = "0.4.2"

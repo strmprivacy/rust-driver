@@ -2,6 +2,8 @@ use avro_rs::types::Value;
 use avro_rs::Schema;
 use serde::Serialize;
 
+/// This trait is used for structures that represent STRMPrivacy
+/// schemas
 pub trait StrmPrivacyValue: Serialize + Clone {
     const STRM_SCHEMA_REF: &'static str;
     const STRM_SCHEMA: &'static str;
