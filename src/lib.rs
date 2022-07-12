@@ -27,11 +27,10 @@
 //! #       dotenv().ok();
 //!
 //!         // initialize the env variables
-//!         let billing_id = env::var("BILLING_ID").expect("no BILLING_ID found in environment");
 //!         let client_id = env::var("CLIENT_ID").expect("no CLIENT_ID found in environment");
 //!         let client_secret = env::var("CLIENT_SECRET").expect("no CLIENT_SECRET found in environment");
 //!
-//!         let mut strm_privacy_client = StrmPrivacyClient::default(billing_id, client_id, client_secret).await?;
+//!         let mut strm_privacy_client = StrmPrivacyClient::default(client_id, client_secret).await?;
 //!
 //!         let event = create_event();
 //!
