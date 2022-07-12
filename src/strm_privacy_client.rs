@@ -4,7 +4,7 @@ use crate::auth::auth_service::AuthService;
 use crate::client::sender_service::SenderService;
 use crate::strm_privacy_value::StrmPrivacyValue;
 
-pub const AUTH_URL: &str = "https://sts.strmprivacy.io";
+pub const AUTH_URL: &str = "https://accounts.strmprivacy.io/auth/realms/streams/protocol/openid-connect/token";
 pub const API_URL: &str = "https://events.strmprivacy.io/event";
 
 /// Container type to easily return backend responses from `send_event` function
@@ -24,14 +24,13 @@ pub struct StrmPrivacyClient {
 impl StrmPrivacyClient {
     /// Creates a new `StrmPrivacyClient` with custom endpoints
     pub async fn new(
-        billing_id: String,
         client_id: String,
         client_secret: String,
         auth_url: &'static str,
         api_url: &'static str,
     ) -> Result<Self, Error> {
         let client = Client::new();
-        let mut auth_service = AuthService::new(billing_id, client_id, client_secret, auth_url);
+        let mut auth_service = AuthService::new(client_id, client_secret, auth_url);
         let sender_service = SenderService::new(api_url);
         auth_service.authenticate(&client).await?;
         Ok(Self {
@@ -43,12 +42,11 @@ impl StrmPrivacyClient {
 
     /// Creates a new `StrmPrivacyClient` with default endpoints
     pub async fn default(
-        billing_id: String,
         client_id: String,
         client_secret: String,
     ) -> Result<Self, Error> {
         let client = Client::new();
-        let mut auth_service = AuthService::new(billing_id, client_id, client_secret, AUTH_URL);
+        let mut auth_service = AuthService::new(client_id, client_secret, AUTH_URL);
         let sender_service = SenderService::new(API_URL);
         auth_service.authenticate(&client).await?;
         Ok(Self {
