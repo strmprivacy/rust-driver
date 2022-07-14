@@ -33,7 +33,7 @@
               "files": [
                 "Cargo.toml"
               ],
-              "from": "version\\s?=\\s?.*",
+              "from": "version\\s?=\\s?\".*\"",
               "to": "version = \"${nextRelease.version}\"",
               "results": [
                 {
