@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/strmprivacy/rust-driver/compare/v1.0.0...v1.0.1) (2022-07-14)
+
+
+### Bug Fixes
+
+* try out release ([d8d89e5](https://github.com/strmprivacy/rust-driver/commit/d8d89e52930a181ff665e95a9f891848cfa0087f))
+
 # 1.0.0 (2022-07-14)
 
 
