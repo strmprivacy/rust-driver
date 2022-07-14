@@ -1,6 +1,6 @@
 [package]
 name = "strm-privacy-driver"
-version = "0.2.0"
+version = "1.0.0"
 authors = ["Maciek Mika maciek@strmprivacy.io"]
 description = "Rust API driver for STRMPrivacy"
 repository = "https://github.com/strmprivacy/rust-driver"
